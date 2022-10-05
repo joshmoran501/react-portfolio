@@ -22,7 +22,7 @@
   
 ## Usage:
 
-  Clone the repository then run npm i to install dependencies and npm start
+  Clone the repository then run `npm i` to install dependencies and `npm start`
   
 ## License:
 
