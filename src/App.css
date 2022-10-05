@@ -40,3 +40,17 @@
 .hover {
   filter:brightness(70%)
 }
+
+body {
+  background-color: #303236;
+  color: white;
+}
+
+body h1,body h2,body p {
+  padding-left: 1em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+

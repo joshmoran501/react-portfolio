@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavBar from "./NavBar";
+import NavTab from "./NavBar";
 
 const styles = {
   headerStyles: {
@@ -10,6 +10,13 @@ const styles = {
     paddingTop: "2em",
     paddingBottom: "2em",
     paddingLeft: "1em",
+    position: "relative",
+    width: "100%",
+  },
+  h1Styles: {
+    marginBottom: "0",
+    paddingTop: "8px",
+    paddingBottom: "8px",
   },
 };
 
@@ -19,8 +26,8 @@ export default function Header() {
 
   return (
     <div style={styles.headerStyles}>
-      <h1>Joshua Moran</h1>
-      <NavBar />
+      <h1 style={styles.h1Styles}>Joshua Moran</h1>
+      <NavTab />
     </div>
   );
 }

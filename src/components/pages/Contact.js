@@ -11,9 +11,9 @@ export default function Contact() {
     <div>
       <h2>Contact Page Under Construction!</h2>
       <p>In the meantime, please contact me at:</p>
-      <ul style={styles.contactStyles.listStyleType}>
+      <ul style={styles.contactStyles}>
         <li>
-          email:
+          email:&nbsp;
           <a
             href="mailto:josh.moran501@gmail.com"
             target="_blank"
@@ -23,7 +23,7 @@ export default function Contact() {
           </a>
         </li>
         <li>
-          GitHub:
+          GitHub:&nbsp;
           <a
             href="https://github.com/joshmoran501"
             target="_blank"

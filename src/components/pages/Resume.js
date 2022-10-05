@@ -10,7 +10,7 @@ export default function Resume() {
     <div>
       <h2>Resume</h2>
       <p>
-        Download my
+        Download my&nbsp;
         <a className="download-btn" href={ResumePDF} download="Joshua-Moran">
           Resume
         </a>

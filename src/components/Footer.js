@@ -4,10 +4,14 @@ import LinkedInLogo from "../assets/images/linkedin.svg";
 
 const styles = {
   footerStyles: {
+    background: "#23415a",
     padding: "1em",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
+    // position: "fixed",
+    // bottom: "0",
+    // width: "100%",
   },
   imgStyles: {
     width: "2.5em",
@@ -25,7 +29,7 @@ export default function Footer() {
   }
 
   return (
-    <div className="footer" style={styles.footerStyles}>
+    <footer className="footer" style={styles.footerStyles}>
       <a
         href="https://github.com/joshmoran501"
         target="_blank"
@@ -52,6 +56,6 @@ export default function Footer() {
           alt="LinkedIn"
         ></img>
       </a>
-    </div>
+    </footer>
   );
 }
