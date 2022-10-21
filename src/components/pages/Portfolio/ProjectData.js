@@ -5,6 +5,23 @@ import JATE from "../../../assets/images/JATE.png";
 
 const ProjectData = [
   {
+    id: "Dungeons-and-Devs-React",
+    img: DungeonsAndDevs,
+    name: "Dungeons & Devs React",
+    stack: [
+      "<MERN/>",
+      "<MongoDB/>",
+      "<Express.js/>",
+      "<React.js/>",
+      "<Node.js/>",
+    ],
+    src: "https://dungeons-n-devs.herokuapp.com/",
+    source: "https://github.com/hackpres/DnDevs_React",
+    shortDescription: "MERN Stack card game",
+    description:
+      "Dungeons $ Devs is a card based battle game that utilizes Node.js, Express.js, MySQL, and Sequelize",
+  },
+  {
     id: "Dungeons-and-Devs",
     img: DungeonsAndDevs,
     name: "Dungeons & Devs",

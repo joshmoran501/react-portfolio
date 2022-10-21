@@ -5,9 +5,16 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import Resume from "./pages/Resume";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+const styles = {
+  containerStyle: {
+    display: "flex",
+    height: "fit-content",
+  },
+};
+
 export default function Container() {
   return (
-    <Router>
+    <Router style={styles.containerStyle}>
       <Routes>
         <Route path="/" element={<About />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>

@@ -10,14 +10,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const styles = {
   containerStyle: {
-    display: "flex",
-  },
-  textStyle: {
-    fontSize: "1.5em",
+    height: "fit-content",
   },
 };
 
-function Container() {
+const Container = () => {
   return (
     <div style={styles.containerStyle}>
       <Router>
@@ -30,7 +27,7 @@ function Container() {
       </Router>
     </div>
   );
-}
+};
 
 export default function App() {
   return (

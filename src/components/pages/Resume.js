@@ -15,7 +15,7 @@ export default function Resume() {
           Resume
         </a>
       </p>
-      <h1>Front-End Skills</h1>
+      <h2>Front-End Skills</h2>
       <ul>
         <li>HTML</li>
         <li>CSS</li>
@@ -24,7 +24,7 @@ export default function Resume() {
         <li>JQuery</li>
         <li>Bootstrap</li>
       </ul>
-      <h1>Back-End Skills</h1>
+      <h2>Back-End Skills</h2>
       <ul>
         <li>APIs</li>
         <li>Node.js</li>

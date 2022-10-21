@@ -1,12 +1,14 @@
 import React from "react";
 import ProjectData from "./ProjectData.js";
 import GitHubRepo from "../../../assets/images/github-mark.svg";
+import styled from "styled-components";
 
 const styles = {
   portfolioStyle: {
     columns: "2 auto",
     display: "flex",
     flexWrap: "wrap",
+    justifyContent: "center",
   },
   sectionStyle: {
     display: "flex",
@@ -26,7 +28,17 @@ const styles = {
   },
 };
 
-export default function Projects() {
+const Projects = styled.div`
+  columns: 2 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media (max-width: 425px) {
+    columns: 1 auto;
+  }
+`;
+
+export default function renderProjects() {
   function darken(event) {
     const darkness = 50;
     event.target.style.filter = `brightness(${darkness}%)`;
@@ -36,12 +48,12 @@ export default function Projects() {
   }
 
   return (
-    <section className="portfolio row" style={styles.portfolioStyle}>
+    <Projects>
       {ProjectData.map((project) => (
         <section
           style={styles.sectionStyle}
           key={project.id}
-          className="project col-5"
+          className="project col-md-5 col-sm-10 col-lg-4"
         >
           <img
             style={styles.imgStyle}
@@ -66,6 +78,6 @@ export default function Projects() {
           </section>
         </section>
       ))}
-    </section>
+    </Projects>
   );
 }
