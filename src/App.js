@@ -19,7 +19,7 @@ const Container = () => {
     <div style={styles.containerStyle}>
       <Router>
         <Routes>
-          <Route path="/react-portfolio" element={<About />}></Route>
+          <Route path="/" element={<About />}></Route>
           <Route path="/portfolio" element={<Portfolio />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/resume" element={<Resume />}></Route>
