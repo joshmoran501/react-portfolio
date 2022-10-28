@@ -18,6 +18,9 @@ const styles = {
     paddingLeft: "5px",
     paddingRight: "5px",
   },
+  spacerStyles: {
+    width: "1%",
+  },
 };
 
 const Footer = styled.footer`
@@ -62,6 +65,7 @@ export default function renderFooter() {
             alt="Github"
           ></img>
         </a>
+        <div style={styles.spacerStyles} />
         <a
           href="https://linkedin.com/in/joshua-moran501"
           target="_blank"

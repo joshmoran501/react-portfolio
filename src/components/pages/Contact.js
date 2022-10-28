@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { useFormik, FormikProvider, useField, Field } from "formik";
-import * as Yup from "yup";
 import styled from "styled-components";
-import messageSchema from "../../utils/messageSchema";
-import { Button } from "react-bootstrap";
 import ContactForm from "../Form";
 
 const styles = {
@@ -50,8 +45,15 @@ function RenderContact() {
   return (
     <>
       <h2>
-        Contact Page Under Construction! Please email me at &nbsp;
-        <a href="josh.moran501@gmail.com">josh.moran501@gmail.com</a>
+        Contact Me at{" "}
+        <a
+          href="mailto:josh.moran501@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          josh.moran501@gmail.com
+        </a>
+        &nbsp;or in the form below:
       </h2>
       <ContactForm></ContactForm>
     </>

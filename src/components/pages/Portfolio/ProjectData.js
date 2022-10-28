@@ -19,7 +19,7 @@ const ProjectData = [
     source: "https://github.com/hackpres/DnDevs_React",
     shortDescription: "MERN Stack card game",
     description:
-      "Dungeons $ Devs is a card based battle game that utilizes Node.js, Express.js, MySQL, and Sequelize",
+      "Dungeons & Devs is a card based battle game that utilizes Node.js, Express.js, MySQL, and Sequelize",
   },
   {
     id: "Dungeons-and-Devs",
@@ -30,7 +30,7 @@ const ProjectData = [
     source: "https://github.com/wtguenthner/Dungeons-Devs",
     shortDescription: "MySQL, Node.js, and Express.js Card-Based Game",
     description:
-      "Dungeons $ Devs is a card based battle game that utilizes Node.js, Express.js, MySQL, and Sequelize",
+      "Dungeons & Devs is a card based battle game that utilizes Node.js, Express.js, MySQL, and Sequelize",
   },
   {
     id: "JATE",
