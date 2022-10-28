@@ -14,7 +14,7 @@ function NavTab() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse style={styles.navbarStyle} id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/react-portfolio">About</Nav.Link>
+            <Nav.Link href="/">About</Nav.Link>
             <Nav.Link href="/portfolio">Portfolio</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
             <Nav.Link href="/resume">Resume</Nav.Link>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 // import Container from "./components/Container";
 import Footer from "./components/Footer";
@@ -10,19 +10,17 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const styles = {
   containerStyle: {
-    display: "flex",
-  },
-  textStyle: {
-    fontSize: "1.5em",
+    height: "fit-content",
+    margin: "2%",
   },
 };
 
-function Container() {
+const Container = () => {
   return (
     <div style={styles.containerStyle}>
       <Router>
         <Routes>
-          <Route path="/react-portfolio" element={<About />}></Route>
+          <Route path="/" element={<About />}></Route>
           <Route path="/portfolio" element={<Portfolio />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/resume" element={<Resume />}></Route>
@@ -30,9 +28,10 @@ function Container() {
       </Router>
     </div>
   );
-}
+};
 
 export default function App() {
+  const [page, setPage] = useState("about");
   return (
     <div>
       <Header />

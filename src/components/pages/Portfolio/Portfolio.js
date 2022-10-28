@@ -1,11 +1,17 @@
 import React from "react";
 import Project from "./Project";
+import styled from "styled-components";
 
-export default function Portfolio() {
+const Portfolio = styled.div`
+  margin-left: 2%;
+  margin-right: 2%;
+`;
+
+export default function renderPortfolio() {
   return (
-    <div>
+    <Portfolio>
       <h1>Portfolio</h1>
       <Project />
-    </div>
+    </Portfolio>
   );
 }
