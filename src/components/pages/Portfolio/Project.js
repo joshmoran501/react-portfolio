@@ -3,6 +3,18 @@ import ProjectData from "./ProjectData.js";
 import GitHubRepo from "../../../assets/images/github-mark.svg";
 import styled from "styled-components";
 
+const LinkBox = styled.a`
+  position: relative;
+  bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  padding: 5px;
+  border: 5px;
+  border-style: solid;
+  border-radius: 5px;
+  width: 225px;
+`;
+
 const styles = {
   portfolioStyle: {
     columns: "2 auto",
@@ -15,15 +27,18 @@ const styles = {
     flexDirection: "column",
     justifyContent: "flex-end",
     alignItems: "center",
+    backgroundRepeat: "no-repeat",
+    margin: "1%",
   },
   imgStyle: {
     maxWidth: "40%",
   },
-  linksStyle: {
-    display: "flex",
+  linkStyle: {
+    textDecoration: "none",
+    opacity: "100%",
   },
   githubStyle: {
-    width: "1.5em",
+    width: "2.5em",
     margin: "1em",
   },
 };
@@ -50,19 +65,30 @@ export default function renderProjects() {
   return (
     <Projects>
       {ProjectData.map((project) => (
-        <section
-          style={styles.sectionStyle}
+        <a
+          href={project.src}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            alignItems: "flex-start",
+            backgroundSize: "250px 250px",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${project.img})`,
+            height: "250px",
+            margin: "1%",
+          }}
           key={project.id}
-          className="project col-md-5 col-sm-10 col-lg-4"
+          className="project col-md-5 col-sm-10 col-lg-3"
         >
-          <img
+          {/* <img
             style={styles.imgStyle}
             src={project.img}
             alt={project.name}
             className="project-img"
-          ></img>
-          <section style={styles.linksStyle} className="project-links">
-            <a href={project.src}>
+          ></img> */}
+          <LinkBox>
+            <a style={styles.linkStyle} href={project.src}>
               <h4>{project.name}</h4>
               <p>{project.shortDescription}</p>
             </a>
@@ -75,8 +101,8 @@ export default function renderProjects() {
                 src={GitHubRepo}
               ></img>
             </a>
-          </section>
-        </section>
+          </LinkBox>
+        </a>
       ))}
     </Projects>
   );

@@ -1,12 +1,13 @@
-import DungeonsAndDevs from "../../../assets/images/DungeonsNDevs.png";
+import DungeonsAndDevsReact from "../../../assets/images/coding-game.jpg";
+import DungeonsAndDevs from "../../../assets/images/dungeon.jpg";
 import Weather from "../../../assets/images/weather.png";
 import IMDA from "../../../assets/images/spotify.png";
-import JATE from "../../../assets/images/JATE.png";
+import JATE from "../../../assets/images/text-editor.jpg";
 
 const ProjectData = [
   {
     id: "Dungeons-and-Devs-React",
-    img: DungeonsAndDevs,
+    img: DungeonsAndDevsReact,
     name: "Dungeons & Devs React",
     stack: [
       "<MERN/>",

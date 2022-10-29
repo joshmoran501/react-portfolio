@@ -10,8 +10,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const styles = {
   containerStyle: {
-    height: "fit-content",
     margin: "2%",
+    height: "fit-content",
   },
 };
 
@@ -31,7 +31,6 @@ const Container = () => {
 };
 
 export default function App() {
-  const [page, setPage] = useState("about");
   return (
     <div>
       <Header />

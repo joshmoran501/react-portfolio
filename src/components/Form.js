@@ -5,8 +5,7 @@ const FORM_ENDPOINT =
 
 const InputLabel = styled.h5`
   display: flex;
-  justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1 rem;
   font-family: darkmode-on, sans-serif;
   font-weight: 100;
   font-style: normal;
@@ -14,37 +13,31 @@ const InputLabel = styled.h5`
 `;
 const Input = styled.input`
   display: flex;
-  justify-content: center;
   border: 1px solid #11526c;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #dfebe8;
   width: 60%;
   font-size: 1.25rem;
   padding-block: 0.5rem;
-  margin: 0 auto 0 auto;
 `;
 const TextArea = styled.textarea`
   display: flex;
-  justify-content: center;
   border: 1px solid #11526c;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #dfebe8;
   width: 60%;
   font-size: 1.25rem;
   padding-block: 0.5rem;
-  margin: 0 auto 0 auto;
 `;
 const Submit = styled.input`
   display: flex;
-  justify-content: center;
   border: 2px solid #11526c;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #11526c;
   color: #dfebe8;
-  width: 30%;
   font-size: 1.5rem;
-  padding-block: 0.5rem;
-  margin: 1rem auto;
+  padding: 0.6rem;
+  margin-top: 1rem;
 `;
 
 const FormWrapper = styled.form`

@@ -45,7 +45,7 @@ function RenderContact() {
   return (
     <>
       <h2>
-        Contact Me at{" "}
+        Please contact me at&nbsp;
         <a
           href="mailto:josh.moran501@gmail.com"
           target="_blank"

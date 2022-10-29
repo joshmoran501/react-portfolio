@@ -31,10 +31,10 @@ const Footer = styled.footer`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  @media (min-width: 630px) {
+  @media (max-width: 630px) {
     position: fixed;
     bottom: 0px;
   }

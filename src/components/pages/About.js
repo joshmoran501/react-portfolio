@@ -3,15 +3,17 @@ import bioPhoto from "../../assets/images/bio photo.jpg";
 
 const styles = {
   rowStyle: {
+    height: "fit-content",
     marginLeft: "2%",
     marginRight: "2%",
+    paddingBottom: "2%",
   },
   columnStyle: {
     display: "flex",
   },
   textStyle: {
     textAlign: "justify",
-    fontSize: "1.5rem",
+    fontSize: "1.25rem",
   },
   photoStyle: {
     display: "flex",
