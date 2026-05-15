@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:majortalent.com)",
+      "WebFetch(domain:www.thekaizendesign.com)"
+    ]
+  }
+}

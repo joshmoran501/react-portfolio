@@ -1,3 +1,30 @@
+:root {
+  --color-bg: #2a2d32;
+  --color-surface: #34383f;
+  --color-header-footer: #23415a;
+  --color-text: #f2f4f8;
+  --color-text-muted: #d4dae6;
+  --color-link: #9fd4ff;
+  --color-link-hover: #c5e6ff;
+  --color-accent: #5eb0e8;
+  --color-border: #4a5160;
+  /* Align Bootstrap tokens with our palette for components + utilities */
+  --bs-body-bg: var(--color-bg);
+  --bs-body-color: var(--color-text);
+  --bs-secondary-color: var(--color-text-muted);
+  --bs-tertiary-color: #b0b8c8;
+  --bs-emphasis-color: #ffffff;
+  --bs-link-color: var(--color-link);
+  --bs-link-hover-color: var(--color-link-hover);
+  --bs-border-color: var(--color-border);
+  --radius-card: 10px;
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --font-body: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, sans-serif;
+  --content-max-width: 52rem;
+  --footer-space: 5rem;
+}
+
 .App {
   text-align: center;
 }
@@ -38,19 +65,294 @@
 }
 
 .hover {
-  filter:brightness(70%)
+  filter: brightness(70%);
 }
 
 body {
-  background-color: #303236;
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
 }
 
-body h1,body h2,body p {
-  padding-left: 1em;
+/* Main content: explicit text + links (Bootstrap / reboot can leave low-contrast defaults) */
+.site-main h1,
+.site-main h2,
+.site-main h3,
+.site-main h4,
+.site-main h5,
+.site-main h6,
+.site-main p,
+.site-main li {
+  color: var(--color-text);
+}
+
+.site-main a:not(.btn):not(.nav-link):not(.navbar-brand):not(.page-link):not(.portfolio-github-link) {
+  color: var(--color-link);
+}
+
+.site-main a:not(.btn):not(.nav-link):not(.navbar-brand):not(.page-link):not(.portfolio-github-link):hover,
+.site-main a:not(.btn):not(.nav-link):not(.navbar-brand):not(.page-link):not(.portfolio-github-link):focus-visible {
+  color: var(--color-link-hover);
+}
+
+.site-main .text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+body h1,
+body h2,
+body h3,
+body p {
+  padding-left: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
 }
 
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+  padding-bottom: var(--footer-space);
+  color: var(--color-text);
+}
+
+.site-header {
+  background: var(--color-header-footer);
+  color: var(--color-text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 1.25rem 1.25rem;
+  width: 100%;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+}
+
+.site-footer {
+  min-height: 0;
+  height: auto;
+  background-color: var(--color-header-footer);
+  padding: 0.45rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.site-footer a {
+  display: inline-flex;
+  padding: 0 0.25rem;
+}
+
+.site-footer-spacer {
+  display: inline-block;
+  width: 0.65rem;
+}
+
+.site-footer img {
+  height: 28px;
+  width: auto;
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+.site-footer a:hover img,
+.site-footer a:focus-visible img {
+  filter: brightness(0.75);
+}
+
+.site-footer a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.main-container {
+  margin: 2%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar .nav-link {
+  border-radius: 6px;
+  margin-inline: 0.15rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #ffffff;
+}
+
+.navbar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.12);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.navbar .nav-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.page-title {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-page {
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-bottom: 1rem;
+}
+
+.portfolio-intro {
+  text-align: left;
+  max-width: 40rem;
+}
+
+.portfolio-filters .btn {
+  margin: 0.15rem;
+}
+
+.portfolio-card {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-card);
+}
+
+.portfolio-card .card-title {
+  color: var(--color-text);
+}
+
+.portfolio-card-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.portfolio-github-link {
+  border-radius: 8px;
+  padding: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.portfolio-github-link img {
+  filter: invert(1) brightness(1.15);
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+.portfolio-github-link:hover,
+.portfolio-github-link:focus-visible {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-github-link:hover img,
+.portfolio-github-link:focus-visible img {
+  filter: invert(1) brightness(0.92);
+}
+
+.portfolio-github-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.portfolio-category-badge {
+  font-weight: 500;
+}
+
+.about-section {
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1rem;
+}
+
+.about-section h2 {
+  margin-bottom: 1rem;
+}
+
+.about-section .about-photo {
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.about-section .about-prose {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .about-section .about-prose {
+    max-width: 58rem;
+  }
+}
+
+.text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+/* Card descriptions + stack chips on dark surfaces */
+.portfolio-card .card-text.text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.portfolio-card .badge.bg-dark {
+  color: #f0f2f6 !important;
+  background-color: #1f2329 !important;
+  border: 1px solid var(--color-border);
+}
+
+.pdf-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-viewer {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 14rem);
+  min-height: 500px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: #1f2329;
+}
+
+.pdf-viewer iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

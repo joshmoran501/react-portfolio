@@ -1,17 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
 import ContactForm from "../Form";
-
-const styles = {
-  contactStyles: {
-    listStyleType: "none",
-  },
-};
-
-const Contact = styled.div`
-  margin-left: 2%;
-  margin-right: 2%;
-`;
 
 // const TextInputLiveFeedback = ({ label, helpText, ...props }) => {
 //   const [field, meta] = useField(props);

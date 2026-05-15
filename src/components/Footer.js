@@ -1,85 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import GitHubLogo from "../assets/images/github-mark.svg";
 import LinkedInLogo from "../assets/images/linkedin.svg";
-import styled from "styled-components";
 
-const styles = {
-  // footerStyles: {
-  //   background: "#23415a",
-  //   padding: "1em",
-  //   display: "flex",
-  //   flexDirection: "row",
-  //   justifyContent: "center",
-  //   position: "relative",
-  //   width: "100%",
-  // },
-  imgStyles: {
-    height: "50px",
-    paddingLeft: "5px",
-    paddingRight: "5px",
-  },
-  spacerStyles: {
-    width: "1%",
-  },
-};
-
-const Footer = styled.footer`
-  height: 10vh;
-  background-color: #23415a;
-  padding: 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  @media (max-width: 630px) {
-    position: fixed;
-    bottom: 0px;
-  }
-`;
-
-export default function renderFooter() {
-  function darken(event) {
-    const darkness = 50;
-    event.target.style.filter = `brightness(${darkness}%)`;
-  }
-  function lighten(event) {
-    event.target.style.filter = "none";
-  }
-
+export default function Footer() {
   return (
-    <>
-      <Footer>
-        <a
-          href="https://github.com/joshmoran501"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            onMouseOver={darken}
-            onMouseLeave={lighten}
-            src={GitHubLogo}
-            style={styles.imgStyles}
-            alt="Github"
-          ></img>
-        </a>
-        <div style={styles.spacerStyles} />
-        <a
-          href="https://linkedin.com/in/joshua-moran501"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            onMouseOver={darken}
-            onMouseLeave={lighten}
-            src={LinkedInLogo}
-            style={styles.imgStyles}
-            alt="LinkedIn"
-          ></img>
-        </a>
-      </Footer>
-    </>
+    <footer className="site-footer">
+      <a
+        href="https://github.com/joshmoran501"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub profile"
+      >
+        <img src={GitHubLogo} alt="" />
+      </a>
+      <span className="site-footer-spacer" aria-hidden="true" />
+      <a
+        href="https://linkedin.com/in/joshua-moran501"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn profile"
+      >
+        <img src={LinkedInLogo} alt="" />
+      </a>
+    </footer>
   );
 }

@@ -1,63 +1,48 @@
 import React from "react";
 import bioPhoto from "../../assets/images/bio photo.jpg";
 
-const styles = {
-  rowStyle: {
-    height: "fit-content",
-    marginLeft: "2%",
-    marginRight: "2%",
-    paddingBottom: "2%",
-  },
-  columnStyle: {
-    display: "flex",
-  },
-  textStyle: {
-    textAlign: "justify",
-    fontSize: "1.25rem",
-  },
-  photoStyle: {
-    display: "flex",
-    height: "fit-content",
-    padding: ".75em",
-    maxWidth: "40%",
-    maxHeight: "40%",
-    float: "right",
-  },
+const photoStyle = {
+  maxWidth: "min(40%, 280px)",
+  height: "auto",
 };
 
 export default function About() {
   return (
-    <>
-      <div className="row" style={styles.rowStyle}>
-        <div className="col-lg-12 pt-4 pt-lg-0">
-          <h2>About Me</h2>
-          <img style={styles.photoStyle} src={bioPhoto} className="float-end" />
+    <div className="row about-section">
+      <div className="col-lg-12 pt-4 pt-lg-0">
+        <h2>About Me</h2>
+        <img
+          style={photoStyle}
+          src={bioPhoto}
+          alt="Joshua Moran"
+          className="float-md-end ms-md-3 mb-3 about-photo"
+        />
 
-          <p style={styles.textStyle}>
-            Hello, my name is Joshua Moran. I am a MERN stack developer in the
-            Georgia Tech Coding Boot Camp. I am proficient in JavaScript, HTML
-            and CSS, front-end, database, and server-side developments, as well
-            as quality assurance and deployment.
-          </p>
-          <p style={styles.textStyle}>
-            I have a Master’s in Primate Behavior and undergraduate degrees in
-            neuroscience and biology, not exactly tech-oriented degrees, right?
-            Many of the skills I learned are applicable, however, including
-            problem-solving, analyzing data, and effective communication skills.
-          </p>
-          <p style={styles.textStyle}>
-            Outside of work, I am a huge Star Wars fan! I have been collecting
-            memorabilia since I was 3 years old and travel around the country to
-            attend Star Wars conventions! Also, I am an avid gamer. I play
-            mostly shooters and strategy games. Destiny 2 is my favorite game,
-            mostly for the social aspects. I have made many great friends
-            through Destiny! Finally, I am a big animal lover! My education and
-            previous positions have all been centered around primate behavior,
-            and while I no longer am in the field, I still love my primates and
-            love educating people about them!
-          </p>
-        </div>
+        <p className="about-prose">
+          Hello, my name is Joshua Moran. I am a software developer with full-stack
+          experience building and deploying scalable applications, including a
+          Laravel, React, and MySQL SaaS product in an Agile environment. I use
+          AI-assisted tools across the development lifecycle to move faster while
+          keeping code quality high, and I am comfortable troubleshooting and
+          resolving issues in production. I am also developing an Android application
+          that is currently in alpha testing, from design through deployment.
+        </p>
+        <p className="about-prose">
+          My background is unusual for tech on paper: I hold a Master of Research
+          in Primate Biology, Behavior, and Conservation from Roehampton University and
+          a Bachelor of Science in Neuroscience and Behavioral Biology from Emory
+          University. I am completing an Associate of Science in Computer Science at
+          Metropolitan Community College. Research and instruction taught me
+          rigorous data analysis, clear communication, and how to collaborate with
+          diverse teams—skills I apply every day in software delivery.
+        </p>
+        <p className="about-prose">
+          Outside of work, I am a huge Star Wars fan and have collected memorabilia
+          since I was young. I enjoy shooters and strategy games, especially the
+          social side of Destiny 2. I still care deeply about primates and science
+          education from my earlier career in primate behavior research.
+        </p>
       </div>
-    </>
+    </div>
   );
 }

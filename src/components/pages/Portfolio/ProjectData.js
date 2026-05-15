@@ -3,10 +3,90 @@ import DungeonsAndDevs from "../../../assets/images/dungeon.jpg";
 import Weather from "../../../assets/images/weather.png";
 import IMDA from "../../../assets/images/spotify.png";
 import JATE from "../../../assets/images/text-editor.jpg";
+import MajorTalent from "../../../assets/images/major-talent.png";
+import KaizenDesign from "../../../assets/images/kaizen-design.png";
+import AICybersecurity from "../../../assets/images/ai-cybersecurity.png";
+import AUP from "../../../assets/images/aup.png";
+import ChimpanzeeSubgroups from "../../../assets/images/chimpanzee-grooming.png";
+
+/**
+ * Portfolio entries:
+ * - `src` (optional): public live URL, or an internal route path starting with "/".
+ *   External URLs open in a new tab; internal paths route via react-router. Omit or null if there is no demo.
+ * - `source` (optional): public repo URL. Omit or null if code is proprietary or not shared.
+ * - `demoLabel` (optional): label for the demo button (default: "Live demo"). Use e.g. "Live site" or "App store" when it fits better.
+ * - `category` (required): one of `PORTFOLIO_CATEGORIES` below.
+ */
+export const PORTFOLIO_CATEGORIES = [
+  "Software Development",
+  "Cybersecurity",
+  "Data Science",
+];
 
 const ProjectData = [
   {
+    id: "Chimpanzee-Subgroups",
+    category: "Data Science",
+    img: ChimpanzeeSubgroups,
+    name: "Chimpanzee Subgroups",
+    stack: ["<R/>"],
+    src: "/portfolio/chimpanzee-subgroups",
+    demoLabel: "View document",
+    shortDescription: "Statistical analysis of chimpanzee subgroup behavior",
+    description:
+      "A data science project analyzing chimpanzee subgroup composition and behavior using R.",
+  },
+  {
+    id: "Authorized-Use-Policy",
+    category: "Cybersecurity",
+    img: AUP,
+    name: "Sample Authorized Use Policy",
+    stack: ["<Policy/>", "<Governance/>", "<Cybersecurity/>"],
+    src: "/portfolio/authorized-use-policy",
+    demoLabel: "View document",
+    shortDescription: "Sample acceptable/authorized use policy",
+    description:
+      "A sample authorized use policy outlining acceptable use of organizational systems, data, and network resources.",
+  },
+  {
+    id: "AI-Cybersecurity",
+    category: "Cybersecurity",
+    img: AICybersecurity,
+    name: "Implications of AI in Cybersecurity",
+    stack: ["<Research/>", "<AI/>", "<Cybersecurity/>"],
+    src: "/portfolio/ai-cybersecurity",
+    demoLabel: "View document",
+    shortDescription: "Research paper on AI's role in modern cybersecurity",
+    description:
+      "A written analysis exploring how artificial intelligence is reshaping cybersecurity — covering both defensive applications and emerging threat vectors.",
+  },
+  {
+    id: "Kaizen-Design",
+    category: "Software Development",
+    img: KaizenDesign,
+    name: "The Kaizen Design",
+    stack: ["<Laravel/>", "<React.js/>", "<MySQL/>"],
+    src: "https://www.thekaizendesign.com/",
+    demoLabel: "Live site",
+    shortDescription: "Healthcare construction standards platform",
+    description:
+      "The Kaizen Design is a healthcare technology platform that helps health systems collect, version, and enforce building design standards across facilities to reduce waste and accelerate project delivery.",
+  },
+  {
+    id: "Major-Talent",
+    category: "Software Development",
+    img: MajorTalent,
+    name: "Major Talent",
+    stack: ["<HTML5/>", "<CSS3/>", "<Javascript/>"],
+    src: "https://majortalent.com/",
+    demoLabel: "Live site",
+    shortDescription: "Veteran-focused career platform",
+    description:
+      "Major Talent is a veteran-owned platform that uses AI to translate military credentials into civilian career language, connecting transitioning service members and military spouses with employers.",
+  },
+  /* {
     id: "Dungeons-and-Devs-React",
+    category: "Software Development",
     img: DungeonsAndDevsReact,
     name: "Dungeons & Devs React",
     stack: [
@@ -24,6 +104,7 @@ const ProjectData = [
   },
   {
     id: "Dungeons-and-Devs",
+    category: "Software Development",
     img: DungeonsAndDevs,
     name: "Dungeons & Devs",
     stack: ["<Node.js/>", "<Express.js/>", "<MySQL/>"],
@@ -32,9 +113,10 @@ const ProjectData = [
     shortDescription: "MySQL, Node.js, and Express.js Card-Based Game",
     description:
       "Dungeons & Devs is a card based battle game that utilizes Node.js, Express.js, MySQL, and Sequelize",
-  },
+  }, 
   {
     id: "JATE",
+    category: "Cybersecurity",
     img: JATE,
     name: "JATE",
     stack: ["<Node.js/>", "<Express.js/>", "<Webpack/>"],
@@ -43,9 +125,10 @@ const ProjectData = [
     shortDescription: "Text Editor Progressive Web App",
     description:
       "JATE is a text editor with JavaScript syntax highlighting that can be used offline.",
-  },
+  },*/
   {
     id: "Weather",
+    category: "Software Development",
     img: Weather,
     name: "Weather",
     stack: [
@@ -60,23 +143,6 @@ const ProjectData = [
     shortDescription: "OpenWeather API app",
     description:
       "Weather uses OpenWeather API to generate current weather and a 5 day forecast for searched city",
-  },
-  {
-    id: "IMDA",
-    img: IMDA,
-    name: "IMDA",
-    stack: [
-      "<RESTful API/>",
-      "<Javascript/>",
-      "<JQuery/>",
-      "<CSS3/>",
-      "<HTML5/>",
-    ],
-    src: "https://sophiadelarosa.github.io/group-project/",
-    source: "https://github.com/sophiadelarosa/group-project",
-    shortDescription: "Spotify API app",
-    description:
-      "IMDA utilizes the Spotify API to search for songs based on genre, as well as saving favorite songs",
   },
 ];
 

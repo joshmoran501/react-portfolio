@@ -1,109 +1,110 @@
 import React from "react";
-import ProjectData from "./ProjectData.js";
+import { Link } from "react-router-dom";
+import { Row, Col, Card, Badge, Button } from "react-bootstrap";
 import GitHubRepo from "../../../assets/images/github-mark.svg";
-import styled from "styled-components";
 
-const LinkBox = styled.a`
-  position: relative;
-  bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  padding: 5px;
-  border: 5px;
-  border-style: solid;
-  border-radius: 5px;
-  width: 225px;
-`;
+function stackLabel(tag) {
+  return tag.replace(/^\s*<\s*/, "").replace(/\s*\/?>\s*$/, "");
+}
 
-const styles = {
-  portfolioStyle: {
-    columns: "2 auto",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
-  sectionStyle: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    backgroundRepeat: "no-repeat",
-    margin: "1%",
-  },
-  imgStyle: {
-    maxWidth: "40%",
-  },
-  linkStyle: {
-    textDecoration: "none",
-    opacity: "100%",
-  },
-  githubStyle: {
-    width: "2.5em",
-    margin: "1em",
-  },
-};
+function hasPublicUrl(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
 
-const Projects = styled.div`
-  columns: 2 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  @media (max-width: 425px) {
-    columns: 1 auto;
-  }
-`;
+function isInternalPath(value) {
+  return typeof value === "string" && value.trim().startsWith("/");
+}
 
-export default function renderProjects() {
-  function darken(event) {
-    const darkness = 50;
-    event.target.style.filter = `brightness(${darkness}%)`;
-  }
-  function lighten(event) {
-    event.target.style.filter = "none";
+export default function Project({ projects }) {
+  if (!projects.length) {
+    return (
+      <p className="text-muted" role="status">
+        No projects in this category yet.
+      </p>
+    );
   }
 
   return (
-    <Projects>
-      {ProjectData.map((project) => (
-        <a
-          href={project.src}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
-            alignItems: "flex-start",
-            backgroundSize: "250px 250px",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${project.img})`,
-            height: "250px",
-            margin: "1%",
-          }}
-          key={project.id}
-          className="project col-md-5 col-sm-10 col-lg-3"
-        >
-          {/* <img
-            style={styles.imgStyle}
-            src={project.img}
-            alt={project.name}
-            className="project-img"
-          ></img> */}
-          <LinkBox>
-            <a style={styles.linkStyle} href={project.src}>
-              <h4>{project.name}</h4>
-              <p>{project.shortDescription}</p>
-            </a>
-            <a href={project.source}>
-              <img
-                style={styles.githubStyle}
-                onMouseOver={darken}
-                onMouseLeave={lighten}
-                alt="github"
-                src={GitHubRepo}
-              ></img>
-            </a>
-          </LinkBox>
-        </a>
-      ))}
-    </Projects>
+    <Row xs={1} md={2} lg={3} className="g-4 portfolio-grid">
+      {projects.map((project) => {
+        const demoUrl = hasPublicUrl(project.src) ? project.src.trim() : null;
+        const repoUrl = hasPublicUrl(project.source) ? project.source.trim() : null;
+
+        return (
+          <Col key={project.id}>
+            <Card className="portfolio-card h-100 border-0 shadow-sm">
+              <Card.Img
+                variant="top"
+                src={project.img}
+                alt={project.name}
+                className="portfolio-card-img"
+              />
+              <Card.Body className="d-flex flex-column">
+                <Card.Title as="h3" className="h5 mb-2">
+                  {project.name}
+                </Card.Title>
+                <Card.Text className="text-muted small flex-grow-1">
+                  {project.shortDescription}
+                </Card.Text>
+                {project.stack?.length ? (
+                  <div className="portfolio-stack mb-3" aria-label="Technologies">
+                    {project.stack.map((tag) => (
+                      <Badge key={tag} bg="dark" text="light" className="me-1 mb-1 fw-normal">
+                        {stackLabel(tag)}
+                      </Badge>
+                    ))}
+                  </div>
+                ) : null}
+                <div className="d-flex flex-wrap gap-2 align-items-center mt-auto pt-1">
+                  {demoUrl ? (
+                    isInternalPath(demoUrl) ? (
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        as={Link}
+                        to={demoUrl}
+                      >
+                        {project.demoLabel?.trim() || "Live demo"}
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        href={demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.demoLabel?.trim() || "Live demo"}
+                      </Button>
+                    )
+                  ) : null}
+                  {repoUrl ? (
+                    <a
+                      href={repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="portfolio-github-link d-inline-flex align-items-center justify-content-center"
+                      aria-label={`${project.name} public repository`}
+                    >
+                      <img src={GitHubRepo} alt="" width={28} height={28} />
+                    </a>
+                  ) : null}
+                </div>
+                {!demoUrl && !repoUrl ? (
+                  <p className="small text-muted mb-0 mt-2">
+                    No public demo or repository for this project.
+                  </p>
+                ) : null}
+                {demoUrl && !repoUrl && !isInternalPath(demoUrl) ? (
+                  <p className="small text-muted mb-0 mt-2">
+                    Source code is not shared (private or proprietary).
+                  </p>
+                ) : null}
+              </Card.Body>
+            </Card>
+          </Col>
+        );
+      })}
+    </Row>
   );
 }

@@ -43,9 +43,6 @@ const Submit = styled.input`
 const FormWrapper = styled.form`
   overflowx: hidden;
 `;
-const logoStyle = {
-  margin: "auto 2rem",
-};
 
 const ContactForm = () => {
   const [name, setName] = useState("");
