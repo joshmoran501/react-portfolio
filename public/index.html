@@ -1,40 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark" data-theme="dark">
   <head>
     <meta charset="utf-8" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var prefersLight =
+            window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+          var theme = saved === "light" || saved === "dark" ? saved : prefersLight ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+          document.documentElement.setAttribute("data-bs-theme", theme);
+        } catch (_) {}
+      })();
+    </script>
     <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#23415a" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Portfolio of Joshua Moran - full-stack software developer (Laravel, React, MySQL) shipping production SaaS in Agile teams."
     />
+    <meta name="author" content="Joshua Moran" />
+    <link rel="canonical" href="https://www.joshuamoranisadev.com/" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Joshua Moran" />
+    <meta property="og:title" content="Joshua Moran - Software Developer" />
+    <meta
+      property="og:description"
+      content="Full-stack developer (Laravel, React, MySQL) shipping production SaaS. Research-trained, AI-assisted, Agile."
+    />
+    <meta property="og:url" content="https://www.joshuamoranisadev.com/" />
+    <meta property="og:image" content="https://www.joshuamoranisadev.com/lemur-favicon.png" />
+    <meta property="og:image:alt" content="Lemur logo for Joshua Moran's portfolio" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Joshua Moran - Software Developer" />
+    <meta
+      name="twitter:description"
+      content="Full-stack developer (Laravel, React, MySQL) shipping production SaaS. Research-trained, AI-assisted, Agile."
+    />
+    <meta name="twitter:image" content="https://www.joshuamoranisadev.com/lemur-favicon.png" />
+    <meta name="twitter:image:alt" content="Lemur logo for Joshua Moran's portfolio" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Joshua Moran</title>
+    <title>Joshua Moran - Software Developer</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Joshua Moran",
+        "url": "https://www.joshuamoranisadev.com/",
+        "jobTitle": "Software Developer",
+        "image": "https://www.joshuamoranisadev.com/lemur-favicon.png",
+        "email": "mailto:josh.moran501@gmail.com",
+        "knowsAbout": [
+          "Software Development",
+          "Full-stack Development",
+          "Laravel",
+          "React",
+          "MySQL",
+          "Cybersecurity",
+          "Data Science"
+        ],
+        "sameAs": [
+          "https://github.com/joshmoran501",
+          "https://linkedin.com/in/joshua-moran501"
+        ]
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root" style="height:100vh"></div>
+    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

@@ -19,7 +19,8 @@ import ContactForm from "../Form";
 //   );
 // };
 
-function RenderContact() {
+function RenderContact()
+{
   // const [validated, setValidated] = useState(false);
 
   // const handleSubmit = (e) => {
@@ -32,7 +33,7 @@ function RenderContact() {
   // };
   return (
     <>
-      <h2>
+      <h3>
         Please contact me at&nbsp;
         <a
           href="mailto:josh.moran501@gmail.com"
@@ -42,63 +43,9 @@ function RenderContact() {
           josh.moran501@gmail.com
         </a>
         &nbsp;or in the form below:
-      </h2>
+      </h3>
       <ContactForm></ContactForm>
     </>
-    // <Contact>
-    //   <Form noValidate validated={validated} onSubmit={handleSubmit}>
-    //     <Form.Group>
-    //       <Form.Label>Email address:</Form.Label>
-    //       <Form.Control
-    //         required
-    //         type="email"
-    //         placeholder="Enter email"
-    //       ></Form.Control>
-    //       <Form.Control.Feedback type="invalid">
-    //         Please use a valid email
-    //       </Form.Control.Feedback>
-    //     </Form.Group>
-    //     <Form.Group>
-    //       <Form.Label>Your message:</Form.Label>
-    //       <Form.Control required as="textarea"></Form.Control>
-    //     </Form.Group>
-    //     <Button type="submit">Submit</Button>
-    //   </Form>
-    // </Contact>
-    // const [characterCount, setCharacterCount] = useState(0);
-    // const formik = useFormik({
-    //   initialValues: {
-    //     email: "",
-    //     message: "",
-    //   },
-    //   onSubmit: async (values) => {
-    //     await console.log("hi");
-    //   },
-    //   validationSchema: { messageSchema },
-    // });
-    // return (
-    //   <Contact>
-    //     <h2>Contact Page Under Construction!</h2>
-    //     <FormikProvider value={formik}>
-    //       <Form>
-    //         <label htmlFor="email:">Email</label>
-    //         <Field
-    //           label="email"
-    //           id="email"
-    //           name="email"
-    //           type="email"
-    //           helpText="please enter a valid email"
-    //         ></Field>
-    //         <TextInputLiveFeedback
-    //           label="Your message:"
-    //           name="message"
-    //           as="textarea"
-    //           onChange={(e) => setCharacterCount(e.target.value.length)}
-    //           helpText={`${1000 - characterCount} characters remaining`}
-    //         ></TextInputLiveFeedback>
-    //       </Form>
-    //     </FormikProvider>
-    //   </Contact>
   );
 }
 

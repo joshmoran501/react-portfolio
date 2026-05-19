@@ -1,104 +1,85 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+
 const FORM_ENDPOINT =
   "https://public.herotofu.com/v1/f84e3960-516b-11ed-9f58-f3ab7f1a635a";
 
-const InputLabel = styled.h5`
-  display: flex;
-  font-size: 1 rem;
-  font-family: darkmode-on, sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  margin: 0.8rem auto;
-`;
-const Input = styled.input`
-  display: flex;
-  border: 1px solid #11526c;
-  border-radius: 5px;
-  background-color: #dfebe8;
-  width: 60%;
-  font-size: 1.25rem;
-  padding-block: 0.5rem;
-`;
-const TextArea = styled.textarea`
-  display: flex;
-  border: 1px solid #11526c;
-  border-radius: 5px;
-  background-color: #dfebe8;
-  width: 60%;
-  font-size: 1.25rem;
-  padding-block: 0.5rem;
-`;
-const Submit = styled.input`
-  display: flex;
-  border: 2px solid #11526c;
-  border-radius: 5px;
-  background-color: #11526c;
-  color: #dfebe8;
-  font-size: 1.5rem;
-  padding: 0.6rem;
-  margin-top: 1rem;
-`;
-
-const FormWrapper = styled.form`
-  overflowx: hidden;
-`;
-
-const ContactForm = () => {
+export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [business, setBusiness] = useState("");
   const [message, setMessage] = useState("");
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-  const handleBusinessChange = (event) => {
-    setBusiness(event.target.value);
-  };
-  const handleMessageChange = (event) => {
-    setMessage(event.target.value);
-  };
-  const handleSubmit = (event) => {
-    const formData = [name, email, business, message];
-    return console.log(formData);
-  };
 
   return (
-    <FormWrapper action={FORM_ENDPOINT} method="POST" target="_blank">
-      <InputLabel>Name:</InputLabel>
-      <Input
-        name="name"
-        type="text"
-        defaultValue={name}
-        onChange={handleNameChange}
-      ></Input>
-      <InputLabel>Email:</InputLabel>
-      <Input
-        name="email"
-        type="email"
-        defaultValue={email}
-        onChange={handleEmailChange}
-      ></Input>
-      <InputLabel>Business:</InputLabel>
-      <Input
-        name="business"
-        type="text"
-        defaultValue={business}
-        onChange={handleBusinessChange}
-      ></Input>
-      <InputLabel>Message:</InputLabel>
-      <TextArea
-        name="message"
-        type="text"
-        defaultValue={message}
-        onChange={handleMessageChange}
-      ></TextArea>
-      <Submit type="submit" value="Submit" onClick={handleSubmit}></Submit>
-    </FormWrapper>
-  );
-};
+    <form
+      className="contact-form"
+      action={FORM_ENDPOINT}
+      method="POST"
+      target="_blank"
+    >
+      <div className="contact-form-field">
+        <label className="contact-form-label" htmlFor="contact-name">
+          Name
+        </label>
+        <input
+          id="contact-name"
+          className="contact-form-input"
+          name="name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          autoComplete="name"
+        />
+      </div>
 
-export default ContactForm;
+      <div className="contact-form-field">
+        <label className="contact-form-label" htmlFor="contact-email">
+          Email
+        </label>
+        <input
+          id="contact-email"
+          className="contact-form-input"
+          name="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          autoComplete="email"
+          required
+        />
+      </div>
+
+      <div className="contact-form-field">
+        <label className="contact-form-label" htmlFor="contact-business">
+          Business
+        </label>
+        <input
+          id="contact-business"
+          className="contact-form-input"
+          name="business"
+          type="text"
+          value={business}
+          onChange={(e) => setBusiness(e.target.value)}
+          autoComplete="organization"
+        />
+      </div>
+
+      <div className="contact-form-field">
+        <label className="contact-form-label" htmlFor="contact-message">
+          Message
+        </label>
+        <textarea
+          id="contact-message"
+          className="contact-form-textarea"
+          name="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          rows={6}
+          required
+        />
+      </div>
+
+      <button type="submit" className="contact-form-submit">
+        Send message
+      </button>
+    </form>
+  );
+}

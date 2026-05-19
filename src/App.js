@@ -8,6 +8,7 @@ import Resume from "./components/pages/Resume";
 import AICybersecurity from "./components/pages/AICybersecurity";
 import AcceptableUsePolicy from "./components/pages/AcceptableUsePolicy";
 import ChimpanzeeSubgroups from "./components/pages/ChimpanzeeSubgroups";
+import { ThemeProvider } from "./components/ThemeContext";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -29,19 +30,21 @@ function Container() {
 
 export default function App() {
   return (
-    <Router
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
-      <div className="app-layout">
-        <Header />
-        <div className="site-main">
-          <Container />
+    <ThemeProvider>
+      <Router
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
+        <div className="app-layout">
+          <Header />
+          <main className="site-main">
+            <Container />
+          </main>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </ThemeProvider>
   );
 }

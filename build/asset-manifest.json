@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.59802923.css",
-    "main.js": "/static/js/main.c53322c8.js",
+    "main.css": "/static/css/main.211e9404.css",
+    "main.js": "/static/js/main.6dccdc06.js",
     "static/media/ai-cybersecurity.png": "/static/media/ai-cybersecurity.1011c281799fe8c9e8f8.png",
     "static/media/chimpanzee-grooming.png": "/static/media/chimpanzee-grooming.a5b735a95e37f2b5cbeb.png",
     "static/media/Chimpanzee Subgroups.pdf": "/static/media/Chimpanzee Subgroups.5d3210699492ab6a964f.pdf",
@@ -16,11 +16,11 @@
     "static/media/download-solid-full.svg": "/static/media/download-solid-full.ba522b689435e0c676a7f1f6097c01c9.svg",
     "static/media/github-mark.svg": "/static/media/github-mark.98583a0a7e978c94f6a5027d2891a01d.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.7fa1568cc4fcd510c8fd8203e4c66b6b.svg",
-    "main.59802923.css.map": "/static/css/main.59802923.css.map",
-    "main.c53322c8.js.map": "/static/js/main.c53322c8.js.map"
+    "main.211e9404.css.map": "/static/css/main.211e9404.css.map",
+    "main.6dccdc06.js.map": "/static/js/main.6dccdc06.js.map"
   },
   "entrypoints": [
-    "static/css/main.59802923.css",
-    "static/js/main.c53322c8.js"
+    "static/css/main.211e9404.css",
+    "static/js/main.6dccdc06.js"
   ]
 }

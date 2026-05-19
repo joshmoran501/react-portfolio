@@ -54,19 +54,19 @@ const ProjectData = [
     demoLabel: "View document",
     shortDescription: "Research paper on AI's role in modern cybersecurity",
     description:
-      "A written analysis exploring how artificial intelligence is reshaping cybersecurity — covering both defensive applications and emerging threat vectors.",
+      "A written analysis exploring how artificial intelligence is reshaping cybersecurity - covering both defensive applications and emerging threat vectors.",
   },
   {
     id: "Kaizen-Design",
     category: "Software Development",
     img: KaizenDesign,
-    name: "The Kaizen Design",
+    name: "Kaizen Design",
     stack: ["<Laravel/>", "<React.js/>", "<MySQL/>"],
     src: "https://www.thekaizendesign.com/",
     demoLabel: "Live site",
     shortDescription: "Healthcare construction standards platform",
     description:
-      "The Kaizen Design is a healthcare technology platform that helps health systems collect, version, and enforce building design standards across facilities to reduce waste and accelerate project delivery.",
+      "Kaizen Design is a healthcare technology platform that helps health systems collect, version, and enforce building design standards across facilities to reduce waste and accelerate project delivery.",
   },
   {
     id: "Major-Talent",

@@ -32,13 +32,15 @@ export default function Project({ projects }) {
 
         return (
           <Col key={project.id}>
-            <Card className="portfolio-card h-100 border-0 shadow-sm">
-              <Card.Img
-                variant="top"
-                src={project.img}
-                alt={project.name}
-                className="portfolio-card-img"
-              />
+            <Card className="portfolio-card h-100 border-0">
+              <div className="portfolio-card-img-wrap">
+                <Card.Img
+                  variant="top"
+                  src={project.img}
+                  alt={project.name}
+                  className="portfolio-card-img"
+                />
+              </div>
               <Card.Body className="d-flex flex-column">
                 <Card.Title as="h3" className="h5 mb-2">
                   {project.name}
@@ -49,7 +51,12 @@ export default function Project({ projects }) {
                 {project.stack?.length ? (
                   <div className="portfolio-stack mb-3" aria-label="Technologies">
                     {project.stack.map((tag) => (
-                      <Badge key={tag} bg="dark" text="light" className="me-1 mb-1 fw-normal">
+                      <Badge
+                        key={tag}
+                        bg="dark"
+                        text="light"
+                        className="stack-chip"
+                      >
                         {stackLabel(tag)}
                       </Badge>
                     ))}

@@ -3,14 +3,16 @@ import { Row, Col } from "react-bootstrap";
 import ResumePDF from "../../assets/documents/Joshua-Moran.pdf";
 import DownloadIcon from "../../assets/images/download-solid-full.svg";
 
-export default function Resume()
-{
+export default function Resume() {
   return (
     <div className="resume-page">
+      <h1 className="page-title">Resume</h1>
+      <p className="resume-intro">
+        A quick technical snapshot. Grab the full PDF for the long version with experience and education.
+      </p>
       <Row className="g-4 align-items-start">
         <Col xs={12} lg={9} className="order-2 order-lg-1">
           <h2>Technical skills</h2>
-
 
           <h3 className="h5 mt-4">Languages</h3>
           <ul>
@@ -40,8 +42,8 @@ export default function Resume()
 
           <h3 className="h5 mt-4">Development practices</h3>
           <ul>
-            <li>Agile, Scrum, software development lifecycle (SDLC)</li>
-            <li>Test-driven development (TDD)</li>
+            <li>Agile, Scrum, software development lifecycle</li>
+            <li>Test-driven development</li>
           </ul>
 
           <h3 className="h5 mt-4">Technologies and delivery</h3>
@@ -54,7 +56,7 @@ export default function Resume()
         </Col>
         <Col xs={12} lg={3} className="order-1 order-lg-2 resume-download-col">
           <a
-            className="download-btn d-inline-flex align-items-center gap-2"
+            className="download-btn"
             href={ResumePDF}
             download="Joshua-Moran.pdf"
             role="button"
