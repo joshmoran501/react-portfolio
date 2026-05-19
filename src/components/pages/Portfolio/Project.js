@@ -45,7 +45,7 @@ export default function Project({ projects }) {
                 <Card.Title as="h3" className="h5 mb-2">
                   {project.name}
                 </Card.Title>
-                <Card.Text className="text-muted small flex-grow-1">
+                <Card.Text className="text-muted small">
                   {project.shortDescription}
                 </Card.Text>
                 {project.stack?.length ? (

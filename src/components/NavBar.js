@@ -8,7 +8,8 @@ const styles = {
   },
 };
 
-function NavTab() {
+function NavTab()
+{
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark" className="p-0">
       <Container fluid className="px-0 justify-content-end">
@@ -18,14 +19,14 @@ function NavTab() {
             <Nav.Link as={NavLink} to="/" end>
               About
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/resume">
+              Resume
+            </Nav.Link>
             <Nav.Link as={NavLink} to="/portfolio">
               Portfolio
             </Nav.Link>
             <Nav.Link as={NavLink} to="/contact">
               Contact
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/resume">
-              Resume
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -21,16 +21,6 @@ import ContactForm from "../Form";
 
 function RenderContact()
 {
-  // const [validated, setValidated] = useState(false);
-
-  // const handleSubmit = (e) => {
-  //   const form = e.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     e.preventDefault();
-  //     e.stopPropogation();
-  //   }
-  //   setValidated(true);
-  // };
   return (
     <>
       <h3>
